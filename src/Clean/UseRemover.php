@@ -1,12 +1,15 @@
 <?php
 
-namespace De\Idrinth\PHPMicroOptimizations;
+namespace De\Idrinth\PHPMicroOptimizations\Clean;
 
 use PhpParser\Node;
 use PhpParser\Node\Stmt\Use_;
 use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitorAbstract;
 
+/**
+ * @internal
+ */
 class UseRemover extends NodeVisitorAbstract
 {
     public function leaveNode(Node $node)

@@ -21,4 +21,4 @@ $abc
         return a_bc . \ABC . \somewhere\rz;
     }
 }
-'define.phpdefinetests';
+'define.phpdefinetest';

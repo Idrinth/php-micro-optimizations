@@ -1,6 +1,6 @@
 <?php
 
-namespace De\Idrinth\PHPMicroOptimizations;
+namespace De\Idrinth\PHPMicroOptimizations\Clean;
 
 use PhpParser\Node;
 use PhpParser\Node\Expr\ConstFetch;
@@ -10,6 +10,9 @@ use PhpParser\Node\Name\FullyQualified;
 use PhpParser\Node\Stmt\Namespace_;
 use PhpParser\NodeVisitorAbstract;
 
+/**
+ * @internal
+ */
 class FullyQualifier extends NodeVisitorAbstract
 {
     private $functions;
@@ -35,7 +38,7 @@ class FullyQualifier extends NodeVisitorAbstract
         return !$name->isFullyQualified() && !in_array("$this->namespace$name", $this->constants, true);
     }
 
-    public function resetNamespace()
+    public function beforeTraverse(array $nodes)
     {
         $this->namespace = '';
         $this->uses = [];

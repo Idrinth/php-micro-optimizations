@@ -1,6 +1,6 @@
 <?php
 
-namespace De\Idrinth\PHPMicroOptimizations;
+namespace De\Idrinth\PHPMicroOptimizations\Read;
 
 use PhpParser\Node;
 use PhpParser\Node\Const_;
@@ -8,17 +8,17 @@ use PhpParser\Node\Expr\FuncCall;
 use PhpParser\Node\Name;
 use PhpParser\Node\Scalar\String_;
 use PhpParser\Node\Stmt\ClassLike;
-use PhpParser\Node\Stmt\Function_;
 use PhpParser\Node\Stmt\Namespace_;
 use PhpParser\NodeVisitorAbstract;
 
-class DefinitionCollector extends NodeVisitorAbstract
+/**
+ * @internal
+ */
+class ConstantCollector extends NodeVisitorAbstract
 {
     private $constants = [];
-    private $functions = [];
     private $namespace = '';
     private $inClass = false;
-    private $uses = [];
     public function enterNode(Node $node) {
         if ($node instanceof Namespace_) {
             $this->namespace = "$node->name\\";
@@ -28,26 +28,20 @@ class DefinitionCollector extends NodeVisitorAbstract
             $this->constants[] = ltrim("$this->namespace$node->name", '\\');
         } elseif ($node instanceof ClassLike) {
             $this->inClass = true;
-        } elseif ($node instanceof Function_) {
-            $this->functions[] = ltrim("$this->namespace$node->name", '\\');
         }
     }
-    public function leaveNode(Node $node) {
+    public function leaveNode(Node $node)
+    {
         if ($node instanceof ClassLike) {
             $this->inClass = false;
         }
     }
-    public function resetNamespace()
+    public function beforeTraverse(array $nodes)
     {
         $this->namespace = '';
-        $this->uses = [];
     }
-    public function getConstants()
+    public function yield()
     {
         return $this->constants;
-    }
-    public function getFunctions()
-    {
-        return $this->functions;
     }
 }

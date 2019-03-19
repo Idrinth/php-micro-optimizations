@@ -1,6 +1,6 @@
 <?php
 
-namespace De\Idrinth\PHPMicroOptimizations;
+namespace De\Idrinth\PHPMicroOptimizations\Evaluate;
 
 use PhpParser\ConstExprEvaluationException;
 use PhpParser\ConstExprEvaluator;
@@ -13,6 +13,9 @@ use PhpParser\Node\Scalar\LNumber;
 use PhpParser\Node\Scalar\String_;
 use PhpParser\NodeVisitorAbstract;
 
+/**
+ * @internal
+ */
 class ExpressionEvaluator extends NodeVisitorAbstract
 {
     private $evaluator;

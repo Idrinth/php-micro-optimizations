@@ -1,6 +1,6 @@
 <?php
 
-namespace De\Idrinth\PHPMicroOptimizations;
+namespace De\Idrinth\PHPMicroOptimizations\Evaluate;
 
 use PhpParser\Node;
 use PhpParser\Node\Expr\ConstFetch;
@@ -11,6 +11,9 @@ use PhpParser\Node\Scalar\MagicConst\File;
 use PhpParser\Node\Scalar\String_;
 use PhpParser\NodeVisitorAbstract;
 
+/**
+ * @internal
+ */
 class FunctionToConstant extends NodeVisitorAbstract
 {
     private $file;
