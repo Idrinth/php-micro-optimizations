@@ -13,7 +13,7 @@ use PhpParser\Node\Expr\ConstFetch;
 /**
  * @internal
  */
-class ConditionSimplifier extends BaseConditionEvaluator
+final class ConditionSimplifier extends BaseConditionEvaluator
 {
     public function enterNode(Node $node) {
         if ($node instanceof BooleanNot && $node->expr instanceof BooleanNot) {

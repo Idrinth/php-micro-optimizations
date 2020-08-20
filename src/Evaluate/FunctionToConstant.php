@@ -14,7 +14,7 @@ use PhpParser\NodeVisitorAbstract;
 /**
  * @internal
  */
-class FunctionToConstant extends NodeVisitorAbstract
+final class FunctionToConstant extends NodeVisitorAbstract
 {
     private $file;
     private $dir;

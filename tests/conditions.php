@@ -11,5 +11,5 @@ if (\abc()) {
 
 \some();
 echo "hi";
-return isset($_SERVER['as']) ? $_SERVER['as'] : \null;
+$a = isset($_SERVER['as']) ? $_SERVER['as'] : \null;
 return isset($_SERVER['as']) ? $_SERVER['as'] : \null;

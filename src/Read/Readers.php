@@ -7,7 +7,7 @@ use PhpParser\Node;
 use PhpParser\NodeTraverser;
 use PhpParser\ParserFactory;
 
-class Readers implements VisitorProcessor
+final class Readers implements VisitorProcessor
 {
     private $traverser;
     private $functions;

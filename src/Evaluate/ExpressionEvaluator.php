@@ -16,7 +16,7 @@ use PhpParser\NodeVisitorAbstract;
 /**
  * @internal
  */
-class ExpressionEvaluator extends NodeVisitorAbstract
+final class ExpressionEvaluator extends NodeVisitorAbstract
 {
     private $evaluator;
     public function __construct() {

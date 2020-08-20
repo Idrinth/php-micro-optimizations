@@ -10,7 +10,7 @@ use PhpParser\NodeVisitorAbstract;
 /**
  * @internal
  */
-class FunctionCollector extends NodeVisitorAbstract
+final class FunctionCollector extends NodeVisitorAbstract
 {
     private $functions = [];
     private $namespace = '';

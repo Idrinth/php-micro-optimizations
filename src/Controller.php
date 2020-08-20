@@ -9,7 +9,7 @@ use De\Idrinth\PHPMicroOptimizations\Read\Result;
 use PhpParser\PrettyPrinter\Standard;
 use Symfony\Component\Finder\Finder;
 
-class Controller
+final class Controller
 {
     private $dirs = [];
     public function __construct(string ...$dirs) {
@@ -55,6 +55,7 @@ class Controller
     {
         $writer = new Standard();
         foreach ($asts as $file => $ast) {
+            #file_put_contents($file.'.bkup', file_get_contents($file));
             file_put_contents(str_replace('test', 'tests', $file), $writer->prettyPrintFile($ast));
         }
     }

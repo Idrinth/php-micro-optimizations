@@ -13,7 +13,7 @@ use PhpParser\NodeVisitorAbstract;
 /**
  * @internal
  */
-class FullyQualifier extends NodeVisitorAbstract
+final class FullyQualifier extends NodeVisitorAbstract
 {
     private $functions;
     private $constants;

@@ -6,7 +6,7 @@ use De\Idrinth\PHPMicroOptimizations\VisitorProcessor;
 use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitor\NameResolver;
 
-class Cleaners implements VisitorProcessor
+final class Cleaners implements VisitorProcessor
 {
     private $traverser;
     public function __construct(array $functions, array $constants) {

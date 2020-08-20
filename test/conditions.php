@@ -25,6 +25,6 @@ if (!!!false) {
     echo "hi";
 }
 
-return array_key_exists('as', $_SERVER) ? $_SERVER['as'] : null;
+$a = array_key_exists('as', $_SERVER) ? $_SERVER['as'] : null;
 
 return !array_key_exists('as', $_SERVER) ? null : $_SERVER['as'];

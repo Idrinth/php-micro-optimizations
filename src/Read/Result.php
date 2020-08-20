@@ -2,7 +2,7 @@
 
 namespace De\Idrinth\PHPMicroOptimizations\Read;
 
-class Result
+final class Result
 {
     private $functions;
     private $constants;

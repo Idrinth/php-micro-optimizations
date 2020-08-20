@@ -18,7 +18,7 @@ use PhpParser\NodeVisitorAbstract;
 /**
  * @internal
  */
-class ArrayKeyExistsHandler extends NodeVisitorAbstract
+final class ArrayKeyExistsHandler extends NodeVisitorAbstract
 {
     private function isUseableFunctionCall(Node $node) {
         return $node->cond instanceof FuncCall 

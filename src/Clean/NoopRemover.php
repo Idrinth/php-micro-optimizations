@@ -10,7 +10,7 @@ use PhpParser\NodeVisitorAbstract;
 /**
  * @internal
  */
-class NoopRemover extends NodeVisitorAbstract
+final class NoopRemover extends NodeVisitorAbstract
 {
     public function leaveNode(Node $node)
     {

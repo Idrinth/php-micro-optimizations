@@ -5,7 +5,7 @@ namespace De\Idrinth\PHPMicroOptimizations\Evaluate;
 use De\Idrinth\PHPMicroOptimizations\RepeatedTraverser;
 use De\Idrinth\PHPMicroOptimizations\VisitorProcessor;
 
-class Evaluators implements VisitorProcessor
+final class Evaluators implements VisitorProcessor
 {
     private $traverser;
     /**
@@ -20,6 +20,7 @@ class Evaluators implements VisitorProcessor
         $this->traverser->addVisitor(new ConditionalSimplifier());
         $this->traverser->addVisitor(new ArrayKeyExistsHandler());
         $this->traverser->addVisitor($this->function2constant = new FunctionToConstant());
+        $this->traverser->addVisitor(new UnreachableCode());
     }
 
     public function process(string $file, array $ast): array {

@@ -14,7 +14,7 @@ use PhpParser\NodeVisitorAbstract;
 /**
  * @internal
  */
-class ConstantCollector extends NodeVisitorAbstract
+final class ConstantCollector extends NodeVisitorAbstract
 {
     private $constants = [];
     private $namespace = '';

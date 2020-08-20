@@ -1,20 +1,25 @@
 {
-    "name": "vendor/php-micro-optimizations",
+    "name": "idrinth/php-micro-optimizations",
     "description": "Description of project php-micro-optimizations.",
     "authors": [
         {
-            "name": "Björn",
-            "email": "your@email.here"
+            "name": "Björn Büttner",
+            "homepage": "https://github.com/Idrinth"
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^7.4",
         "nikic/php-parser": "^4",
         "symfony/finder": "^4"
     },
     "autoload": {
         "psr-4": {
             "De\\Idrinth\\PHPMicroOptimizations\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "De\\Idrinth\\PHPMicroOptimizations\\": "test"
         }
     }
 }

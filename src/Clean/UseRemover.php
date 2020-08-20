@@ -10,7 +10,7 @@ use PhpParser\NodeVisitorAbstract;
 /**
  * @internal
  */
-class UseRemover extends NodeVisitorAbstract
+final class UseRemover extends NodeVisitorAbstract
 {
     public function leaveNode(Node $node)
     {

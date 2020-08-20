@@ -24,7 +24,7 @@ use PhpParser\NodeTraverser;
 /**
  * @internal
  */
-class ConditionalSimplifier extends BaseConditionEvaluator
+final class ConditionalSimplifier extends BaseConditionEvaluator
 {
     public function enterNode(Node $node) {
         if ($node instanceof Ternary) {
